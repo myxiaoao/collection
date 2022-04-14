@@ -19,7 +19,7 @@ collection 可以很方便的做数学常见的计算，或者判断是否含有
 ### 5. reduce()
 reduce 是常见但不是很直观的迭代型计算函数，可以先参考官方例子：
 
-```PHP
+```php
 $collection = collect([1, 2, 3]);
 
 $total = $collection->reduce(function ($carry, $item) {
