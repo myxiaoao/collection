@@ -70,7 +70,3 @@ $collection->all();
 而两者是相反的逻辑判断；
 
 empty 和 notEmpty 则是两者就有的拓展函数，判断当 Collection 是否为空时的行为，用法如 whenEmpty()。
-
----
-
-到此为止，Laravel 的 Collection 函数说明完毕，希望可以帮助到你更有概念，写出更优雅的代码来处理数据。
