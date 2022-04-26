@@ -1,6 +1,6 @@
-# 第三方宏
+# 拓展宏
 
-这里推荐使用一个第三方包，拓展了一些官方没有的但是有用的宏。
+这里推荐使用第三方包，拓展了一些官方没有的但是有用的宏。
 
 ## 安装
 
@@ -14,16 +14,16 @@ composer require spatie/laravel-collection-macros
 
 - [`after`](#after)
 - [`at`](#at)
-- [`second`](#second)
-- [`third`](#third)
-- [`fourth`](#fourth)
-- [`fifth`](#fifth)
-- [`sixth`](#sixth)
-- [`seventh`](#seventh)
-- [`eighth`](#eighth)
-- [`ninth`](#ninth)
-- [`tenth`](#tenth)
-- [`getNth`](#getnth)
+    - [`second`](#second)
+    - [`third`](#third)
+    - [`fourth`](#fourth)
+    - [`fifth`](#fifth)
+    - [`sixth`](#sixth)
+    - [`seventh`](#seventh)
+    - [`eighth`](#eighth)
+    - [`ninth`](#ninth)
+    - [`tenth`](#tenth)
+    - [`getNth`](#getnth)
 - [`before`](#before)
 - [`catch`](#catch)
 - [`chunkBy`](#chunkby)
@@ -68,7 +68,7 @@ composer require spatie/laravel-collection-macros
 
 ### `after`
 
-Get the next item from the collection.
+从 Collection 中获取下一个项目。
 
 ```php
 $collection = collect([1,2,3]);
@@ -83,7 +83,7 @@ $currentItem = $collection->after(function($item) {
 }); // return 3;
 ```
 
-You can also pass a second parameter to be used as a fallback.
+你也可以传递第二个参数，作为默认值。
 
 ```php
 $collection = collect([1,2,3]);
@@ -95,7 +95,7 @@ $collection->after($currentItem, $collection->first()); // return 1;
 
 ### `at`
 
-Retrieve an item at an index.
+匹配对应的位置的值。
 
 ```php
 $data = new Collection([1, 2, 3]);
@@ -106,7 +106,7 @@ $data->at(-1); // 3
 ```
 
 ### `second`
-Retrieve item at the second index.
+匹配第 2 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -115,7 +115,7 @@ $data->second(); // 2
 ```
 
 ### `third`
-Retrieve item at the third index.
+匹配第 3 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -124,7 +124,7 @@ $data->third(); // 3
 ```
 
 ### `fourth`
-Retrieve item at the fourth index.
+匹配第 4 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -133,7 +133,7 @@ $data->fourth(); // 4
 ```
 
 ### `fifth`
-Retrieve item at the fifth index.
+匹配第 5 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -142,7 +142,7 @@ $data->fifth(); // 5
 ```
 
 ### `sixth`
-Retrieve item at the sixth index.
+匹配第 6 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -151,7 +151,7 @@ $data->sixth(); // 6
 ```
 
 ### `seventh`
-Retrieve item at the seventh index.
+匹配第 7 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -160,7 +160,7 @@ $data->seventh(); // 7
 ```
 
 ### `eighth`
-Retrieve item at the eighth index.
+匹配第 8 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -169,7 +169,7 @@ $data->eighth(); // 8
 ```
 
 ### `ninth`
-Retrieve item at the ninth index.
+匹配第 9 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -178,7 +178,7 @@ $data->ninth(); // 9
 ```
 
 ### `tenth`
-Retrieve item at the tenth index.
+匹配第 10 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
@@ -187,7 +187,7 @@ $data->tenth(); // 10
 ```
 
 ### `getNth`
-Retrieve item at the nth item.
+匹配第 11 位的值。
 
 ```php
 $data = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
@@ -197,7 +197,7 @@ $data->getNth(11); // 11
 
 ### `before`
 
-Get the previous item from the collection.
+匹配对应值前一位的值。
 
 ```php
 $collection = collect([1,2,3]);
@@ -212,7 +212,7 @@ $currentItem = $collection->before(function($item) {
 }); // return 2;
 ```
 
-You can also pass a second parameter to be used as a fallback.
+你也可以传递第二个参数，作为默认值。
 
 ```php
 $collection = collect([1,2,3]);
@@ -224,11 +224,11 @@ $collection->before($currentItem, $collection->last()); // return 3;
 
 ### `catch`
 
-See [`Try`](#try)
+请查看 [`Try`](#try)
 
 ### `chunkBy`
 
-Chunks the values from a collection into groups as long the given callback is true. If the optional parameter `$preserveKeys` as `true` is passed, it will preserve the original keys.
+只要参数中的回调函数返回值是 `true`，就将集合中的值分块成组。如果传递可选的参数 `$preserveKeys` 为 `true` ，它将保留原始键。
 
 ```php
 collect(['A', 'A', 'B', 'A'])->chunkBy(function($item) {
@@ -238,7 +238,7 @@ collect(['A', 'A', 'B', 'A'])->chunkBy(function($item) {
 
 ### `collectBy`
 
-Get an item at a given key, and collect it.
+根据 `key` 获取值，同时转换为 Collection。
 
 ```php
 $collection = collect([
@@ -249,7 +249,7 @@ $collection = collect([
 $collection->collectBy('foo'); // Collection([1, 2, 3])
 ```
 
-You can also pass a second parameter to be used as a fallback.
+你也可以传递第二个参数，作为默认值。
 
 ```php
 $collection = collect([
