@@ -23,4 +23,4 @@ Collection 和 Laravel 本身的 ORM 系统 Eloquent 密不可分，因此也配
 
 ---
 到此为止，Laravel 的 Collection 函数说明完毕，希望可以帮助到你更有概念，写出更优雅的代码来处理数据。
----
+
